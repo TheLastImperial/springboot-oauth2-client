@@ -2,6 +2,9 @@ package com.thelastimperial.oauth2_client.entities;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -53,6 +56,13 @@ public class GithubUserEntity {
     private Long followers;
     private Long following;
 
+    // Date from Github
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
+    // Date to register when entity is created and updated.
+    @CreationTimestamp
+    private LocalDateTime whenCreated;
+    @UpdateTimestamp
+    private LocalDateTime whenUpdated;
 }

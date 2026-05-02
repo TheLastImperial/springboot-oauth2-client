@@ -53,3 +53,12 @@ CREATE TABLE github_users (
   updated_at TIMESTAMP,
   PRIMARY KEY(id)
 );
+
+CREATE TABLE google_users (
+  id VARCHAR(255),
+  iss VARCHAR(255),
+  picture VARCHAR(255),
+  name VARCHAR(255),
+  email VARCHAR(255),
+  PRIMARY KEY(id)
+);
