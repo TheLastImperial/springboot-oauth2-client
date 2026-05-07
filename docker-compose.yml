@@ -1,6 +1,6 @@
 services:
   oauth-db:
-    container_name: db
+    container_name: db-client
     image: postgres:17-alpine
     ports:
       - "5432:5432"

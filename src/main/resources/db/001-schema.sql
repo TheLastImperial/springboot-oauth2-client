@@ -60,5 +60,20 @@ CREATE TABLE google_users (
   picture VARCHAR(255),
   name VARCHAR(255),
   email VARCHAR(255),
+
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE oidc_users (
+  id VARCHAR(255),
+  iss VARCHAR(255),
+  picture VARCHAR(255),
+  name VARCHAR(255),
+  email VARCHAR(255),
+
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP,
   PRIMARY KEY(id)
 );

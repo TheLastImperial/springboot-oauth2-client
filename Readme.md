@@ -8,6 +8,11 @@ Create the file `.env` and set the variables:
  - `SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GITHUB_CLIENTID`
  - `SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GITHUB_CLIENTSECRET`
 
+### Spring Boot Authorization Server
+
+You can set the env vars to use your OAuth2 Authorization Server, and this user will be saved as a
+`OidcUserEntity`.
+
 ## Database
 
 Add the next env var to the file `.env`:

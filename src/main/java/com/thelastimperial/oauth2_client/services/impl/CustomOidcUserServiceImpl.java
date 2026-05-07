@@ -6,6 +6,7 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.stereotype.Service;
 
+import com.thelastimperial.oauth2_client.services.GeneralOidcUserService;
 import com.thelastimperial.oauth2_client.services.GoogleUserService;
 
 import lombok.AllArgsConstructor;
@@ -14,11 +15,14 @@ import lombok.AllArgsConstructor;
 @Service
 public class CustomOidcUserServiceImpl extends OidcUserService {
     private final GoogleUserService googleUserService;
+    private final GeneralOidcUserService generalOidcUserService;
 
     public OidcUser loadUser(OidcUserRequest userRequest) throws OAuth2AuthenticationException {
         OidcUser oidcUser = super.loadUser(userRequest);
         if(userRequest.getClientRegistration().getRegistrationId().equals("google")){
             googleUserService.create(oidcUser);
+        }else{
+            generalOidcUserService.create(oidcUser);
         }
         return oidcUser;
     }
